@@ -8,15 +8,15 @@ let toggle = true;
 
 // Array of imgage src's 
 let treasure = [
-    '/chest-open.png',
-    '/chest-open.png',
-    '/chest-jewel.png'
+    'chest-open.png',
+    'chest-open.png',
+    'chest-jewel.png'
 ];
 
 // renders the images using the array above
 let myFun = (classNameFromArray) => {    
     let image = document.createElement('img');
-    image.src = '/chest-closed.png';
+    image.src = 'chest-closed.png';
     image.className = classNameFromArray;
     document.querySelector('.boxes').appendChild(image);
 };
@@ -27,7 +27,7 @@ treasure.sort(() => Math.random() - 0.5).forEach(myFun);
 
 //chech if user scores by matching the className's 
 let checkIfUserWinOrLose = (e) => {        
-    if (e.target.className === '/chest-jewel.png') {
+    if (e.target.className === 'chest-jewel.png') {
         highScore++;
         score.innerHTML = highScore;
         e.target.src = e.target.className;
@@ -66,7 +66,7 @@ button.addEventListener('click', () => {
     treasure.sort(() => Math.random() - 0.5);
     let img = document.querySelectorAll('img');
     img.forEach((image, index)=>{
-        image.src = '/chest-closed.png';
+        image.src = 'chest-closed.png';
         image.className = treasure[index];
     });
    toggle = true;
