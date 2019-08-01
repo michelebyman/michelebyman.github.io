@@ -1,0 +1,217 @@
+@import 'config';
+@import 'menu';
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    @include background;
+    background: $primary-color;
+    color: set-text-color($primary-color);
+    margin: 0;
+    height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.5;
+}
+
+// headings
+
+h1,
+h2,
+h3 {
+    margin: 0;
+    font-weight: 400;
+
+    &.lg-heading {
+        font-size: 6rem;
+    }
+
+    &.sm-heading {
+        margin-bottom: 2rem;
+        padding: 0.2rem 1rem;
+        background: rgba(lighten($primary-color, 2), 0.5)
+    }
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+}
+
+header {
+    position: fixed;
+    z-index: 2;
+    width: 100%;
+}
+
+.text-secondary {
+    color: $secondary-color;
+}
+
+main {
+    padding: 4rem;
+    min-height: calc(100vh - 60px);
+
+    .icons {
+        margin-top: 1rem;
+
+        a {
+            padding: 0.4rem;
+
+            &:hover {
+                color: $secondary-color;
+                @include easOut();
+            }
+        }
+    }
+
+    &#home {
+        overflow: hidden;
+
+        h1 {
+            margin-top: 20vh;
+        }
+    }
+}
+
+// about page
+.about-info {
+    display: grid;
+    grid-gap: 30px;
+    grid-template-areas:
+        'bioimage bio bio'
+        'job1 job2 job3';
+    grid-template-columns: repeat(3, 1fr);
+
+    .bio-image {
+        grid-area: bioimage;
+        margin: auto;
+        border-radius: 50%;
+        border: $secondary-color 2px solid;
+    }
+
+    .bio {
+        grid-area: bio;
+        font-size: 1.5rem;
+    }
+
+    .job-1 {
+        grid-area: job1;
+    }
+
+    .job-2 {
+        grid-area: job2;
+    }
+
+    .job-3 {
+        grid-area: job3;
+    }
+
+    .job {
+        background: lighten($primary-color, 1);
+        padding: 0.5rem;
+        border-right: $secondary-color 5px solid;
+        box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
+    }
+
+    .job:hover {
+        background: lighten($primary-color, 5);
+        @include easOut
+    }
+
+    .eBook {
+        color: $secondary-color;
+        &:hover {
+            color: lighten($secondary-color, 5)
+        }
+    }
+
+
+}
+
+//work / projects
+
+.projects {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap:  1.2rem;
+
+    img {
+        width: 100%;
+        border:  3px solid #fff;
+       
+        &:hover {
+            opacity: 0.5;
+            border-color: $secondary-color;
+            transition: all 0.5s ease-out;
+        }
+    }
+}
+
+// buttom styles
+
+.btn {
+    display: block;
+    padding: 0.5rem 1rem;
+    border: 0;
+    margin-bottom: 0.3rem;
+    &:hover {
+        background: $secondary-color;
+        color: set-text-color($secondary-color)
+    }
+}
+
+.btn-dark {
+    @extend .btn;
+    background: darken($primary-color, 50);
+    color: #fff;
+}
+
+.btn-light {
+    @extend .btn;
+    background: lighten($primary-color, 50);
+    color: #333;
+
+}
+
+// contact page 
+
+.boxes {
+    display: flex; 
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 1rem;
+    div {
+        font-size: 2rem;
+        border: 3px solid #fff;
+        padding: 1.5rem 2.5rem;
+        margin-bottom: 3rem;
+        @include easOut;
+        &:hover{
+            padding: 0.5rem 1.5rem;
+            background:  $secondary-color;
+            color: set-text-color($secondary-color);
+            span {
+                color: set-text-color($secondary-color);
+            }
+        }
+    }
+}
+
+
+
+.footer {
+    height: 60px;
+    position: sticky;
+    bottom: 0;
+    width: 100%;
+    background-color: darken($primary-color, 5);
+    color: set-text-color($primary-color);
+    text-align: center;
+    padding-top: 15px;
+    z-index: 5;
+}
+
+@import 'mobile';
