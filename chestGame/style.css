@@ -1,0 +1,33 @@
+
+body {
+    background: grey;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+button {
+    color: #000;
+    padding: 1.5rem 2.5rem;
+    border-radius: 6px;
+    background-color:#46ce70;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.3s ease-out;
+     margin: 1rem;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+button:active {
+    padding: 1.2rem 2.2rem;
+}
+
+img {
+    cursor: pointer;
+    margin: 1rem;
+}
+
