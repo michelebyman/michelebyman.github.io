@@ -111,7 +111,7 @@ body {
   body#bg-img {
     background: url("../img/background.jpg");
     background-attachment: fixed;
-    background-size: cover; }
+    background-size: contain; }
     body#bg-img:after {
       content: "";
       position: absolute;
@@ -233,10 +233,14 @@ main {
   align-items: center;
   margin-top: 1rem; }
   .boxes div {
-    font-size: 2rem;
+    font-size: 1.5rem;
     border: 3px solid #fff;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
     padding: 1.5rem 2.5rem;
     margin-bottom: 3rem;
+    max-width: 80vw;
     transition: all 0.5s ease-out; }
     .boxes div:hover {
       padding: 0.5rem 1.5rem;
